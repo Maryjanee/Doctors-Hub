@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+// eslint-disable-next-line no-param-reassign
 import axios from 'axios';
 
 export default axios.create({
@@ -14,10 +16,8 @@ export const securedAxios = axios.create({
 securedAxios.interceptors.request.use(config => {
   const method = config.method.toUpperCase();
   if (method !== 'OPTIONS') {
-    // eslint-disable-next-line no-param-reassign
     config.headers = {
       ...config.headers,
-      // 'X-CSRF-TOKEN': localStorage.csrf,
       Authorization: `Bearer ${localStorage.getItem('auth-token')}`,
     };
   }
