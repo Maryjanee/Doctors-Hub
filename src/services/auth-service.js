@@ -1,4 +1,4 @@
-import axios from './axios';
+import axios, { handleError } from './axios';
 
 export default class AuthService {
   static async signUp(userDetails) {
@@ -6,8 +6,16 @@ export default class AuthService {
       const { data } = await axios.post('/users', userDetails);
       return data;
     } catch (err) {
-      console.error(err);
-      return err.data;
+      return handleError(err);
+    }
+  }
+
+  static async login(loginDetails) {
+    try {
+      const { data } = await axios.post('/tokens', loginDetails);
+      return data;
+    } catch (err) {
+      return handleError(err);
     }
   }
 }
