@@ -4,6 +4,7 @@ import AuthService from '../services/auth-service';
 
 const Signup = () => {
   const history = useHistory();
+  const [SignupError, setSignupError] = useState(null);
   const [signupForm, updateSignupForm] = useState({
     username: '',
     email: '',
@@ -28,6 +29,9 @@ const Signup = () => {
       if (response && !response.error) {
         history.push('/login');
       }
+      if (!response || response.error) {
+        setSignupError('An Error Occurred. Please try again');
+      }
     }
   };
 
@@ -40,18 +44,19 @@ const Signup = () => {
 
       <div className="form-container">
         <form onSubmit={handleSubmit}>
-          <input type="text" id="username" name="username" onChange={handleChange} />
-          :
-          <input type="email" id="email" name="email" onChange={handleChange} />
+          <input type="text" id="username" name="username" onChange={handleChange} placeholder="Username" />
 
-          <input type="password" id="password" name="password" onChange={handleChange} />
+          <input type="email" id="email" name="email" onChange={handleChange} placeholder="Email" />
+
+          <input type="password" id="password" name="password" onChange={handleChange} placeholder="Password" />
 
           <button type="submit" className="submit">Create an Account</button>
         </form>
-        <p>
+        <p className="text-center small">
           Already a member?
           <Link to="/" className="create">Log In</Link>
         </p>
+        {SignupError && <div>{SignupError}</div>}
       </div>
     </div>
   );
