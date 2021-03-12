@@ -44,6 +44,7 @@ const Login = () => {
 
   return (
     <div className="container">
+      <h1 className="logo">Doctors Hub</h1>
       <div className="form-container">
         <form onSubmit={handleSubmit} className="d-flex flex-cl">
 
