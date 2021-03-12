@@ -1,5 +1,5 @@
 /* eslint-disable react/no-this-in-sfc */
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import AuthService from '../services/auth-service';
 
@@ -9,6 +9,7 @@ const INITIAL_LOGIN_FORM = {
 };
 
 const Login = () => {
+  const [loginError, setLoginError] = useState(null);
   const [loginForm, updateLoginForm] = useState(INITIAL_LOGIN_FORM);
   const history = useHistory();
 
@@ -26,37 +27,39 @@ const Login = () => {
     updateLoginForm(INITIAL_LOGIN_FORM);
     if (email && password) {
       const response = await AuthService.login({ email, password });
-      if (response.error) {
-        console.error(response.error);
-      } else {
-        console.log(response);
+      if (response && response.token) {
         localStorage.setItem('auth-token', response.token);
-        history.push('/users');
+        setLoginError(null);
+        history.push('/doctors');
+      }
+      if (!response || response.error) {
+        setLoginError('Login failed. Please try again');
       }
     }
   };
 
+  if (localStorage.getItem('auth-token')) {
+    return <Redirect to="/doctors" />;
+  }
+
   return (
-    <div>
-      <p>Login Page</p>
-      <Link to="/">Home Page</Link>
-      <br />
-      <Link to="/login">Login</Link>
+    <div className="container">
+      <div className="form-container">
+        <form onSubmit={handleSubmit} className="d-flex flex-cl">
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
-          Email:
-          <input type="email" id="email" name="email" value={loginForm.email} onChange={handleChange} />
-        </label>
+          <input type="email" id="email" placeholder="Username" name="email" value={loginForm.email} onChange={handleChange} />
 
-        <label htmlFor="password">
-          Password:
-          <input type="password" id="password" name="password" value={loginForm.password} onChange={handleChange} />
-        </label>
+          <input type="password" id="password" name="password" placeholder="Password" value={loginForm.password} onChange={handleChange} />
 
-        <input type="submit" value="Login" />
-      </form>
+          <input type="submit" value="Login" className="submit" />
+        </form>
 
+        <p className="text-center">
+          Not Registered?
+          <Link to="/signup" className="create">Create an Account</Link>
+        </p>
+        {loginError && <div>{loginError}</div>}
+      </div>
     </div>
   );
 };
