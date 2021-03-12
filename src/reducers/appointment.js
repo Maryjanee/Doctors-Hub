@@ -1,7 +1,8 @@
 import {
   GET_USER_APPOINTMENTS_PENDING,
-  GET_USER_APPOINTMENT_SUCCESS,
-  GET_USERAPPOINTMENT_ERROR,
+  GET_USER_APPOINTMENTS_SUCCESS,
+  GET_USER_APPOINTMENTS_ERROR,
+  CREATE_USER_APPOINTMENT_SUCCESS,
 }
   from '../types';
 
@@ -15,14 +16,19 @@ const appointmentReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_USER_APPOINTMENTS_PENDING:
       return { ...state, pending: true };
-    case GET_USER_APPOINTMENT_SUCCESS:
+    case GET_USER_APPOINTMENTS_SUCCESS:
       return {
         ...state, pending: false, appointments: action.payload, error: '',
       };
-    case GET_USERAPPOINTMENT_ERROR:
+    case GET_USER_APPOINTMENTS_ERROR:
       return {
-        ...state, pending: false, appointments: [], error: action.payload,
+        ...state, pending: false, error: action.payload,
       };
+    case CREATE_USER_APPOINTMENT_SUCCESS:
+      return {
+        ...state, pending: false, appointments: [...state.appointments, action.payload], error: '',
+      };
+
     default:
       return state;
   }
