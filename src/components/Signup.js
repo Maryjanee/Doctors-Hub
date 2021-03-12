@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import AuthService from '../services/auth-service';
 
 const Signup = () => {
+  const history = useHistory();
   const [signupForm, updateSignupForm] = useState({
     username: '',
     email: '',
@@ -24,35 +25,34 @@ const Signup = () => {
     if (username && email && password) {
       const response = await AuthService.signUp(signupForm);
       console.log(response);
+      if (response && !response.error) {
+        history.push('/login');
+      }
     }
   };
 
+  if (localStorage.getItem('auth-token')) {
+    return <Redirect to="/doctors" />;
+  }
+
   return (
-    <div>
-      <p>Signup Page</p>
-      <Link to="/">Home Page</Link>
-      <br />
-      <Link to="/login">Login</Link>
+    <div className="container">
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">
-          Username:
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
           <input type="text" id="username" name="username" onChange={handleChange} />
-        </label>
-
-        <label htmlFor="email">
-          Email:
+          :
           <input type="email" id="email" name="email" onChange={handleChange} />
-        </label>
 
-        <label htmlFor="password">
-          Password:
           <input type="password" id="password" name="password" onChange={handleChange} />
-        </label>
 
-        <input type="submit" value="Submit" />
-      </form>
-
+          <button type="submit" className="submit">Create an Account</button>
+        </form>
+        <p>
+          Already a member?
+          <Link to="/" className="create">Log In</Link>
+        </p>
+      </div>
     </div>
   );
 };
