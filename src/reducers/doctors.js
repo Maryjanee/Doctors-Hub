@@ -1,4 +1,4 @@
-import { GET_DOCTOR_SUCCESS, GET_DOCTORS_PENDING, GET_DOCTORS_ERROR } from '../types';
+import { GET_DOCTORS_SUCCESS, GET_DOCTORS_PENDING, GET_DOCTORS_ERROR } from '../types';
 
 const initialState = {
   pending: false,
@@ -10,7 +10,7 @@ const doctorsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DOCTORS_PENDING:
       return { ...state, pending: true };
-    case GET_DOCTOR_SUCCESS:
+    case GET_DOCTORS_SUCCESS:
       return {
         ...state, pending: false, doctors: action.payload, error: '',
       };
