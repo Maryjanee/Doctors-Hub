@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchDoctors } from '../actions/index';
 import loader from '../assets/doctor.gif';
+import '../styles/Doctors.scss';
+import NavBar from './Navbar';
 
 const Doctors = ({
   fetchAllDoctors, doctors, pending, error,
@@ -15,21 +17,26 @@ const Doctors = ({
   }, []);
 
   return (
-    <div>
-      {pending && <img className="center" src={loader} alt="loader" />}
-      {!pending && error && <h3>{error}</h3>}
-      {!pending && !error && doctors.map(doctor => (
-        <Link to={`doctor/${doctor.id}`} key={doctor.id}>
-          <div className="more-info">
-            <p className="single-doctor-title">{doctor.name}</p>
-            <p className="single-doctor-title">{doctor.about}</p>
-            <p className="single-doctor-title">{doctor.specialization}</p>
-            <p className="single-doctor-title">{doctor.location}</p>
-            <p className="single-doctor-title">{doctor.fees}</p>
-            <p className="single-doctor-title">{doctor.email}</p>
-          </div>
-        </Link>
-      ))}
+    <div className="main-content">
+      <NavBar />
+      <div className="container">
+        {pending && <img className="center" src={loader} alt="loader" />}
+        {!pending && error && <h3>{error}</h3>}
+        {!pending && !error && doctors.map(doctor => (
+          <Link to={`doctor/${doctor.id}`} key={doctor.id}>
+            <div className="more-info">
+              <p className="single-doctor-title">{doctor.name}</p>
+              <p className="single-doctor-title">{doctor.about}</p>
+              <p className="single-doctor-title">{doctor.specialization}</p>
+              <p className="single-doctor-title">{doctor.location}</p>
+              <p className="single-doctor-title">{doctor.fees}</p>
+              <p className="single-doctor-title">{doctor.email}</p>
+              <img src={doctor.photo} alt="doctor" />
+            </div>
+          </Link>
+        ))}
+      </div>
+
     </div>
   );
 };

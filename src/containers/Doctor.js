@@ -9,6 +9,7 @@ import { createAppointment } from '../actions/index';
 import validDate from '../utils/validDate';
 // import { getUserIdFromToken } from '../utils/token';
 import addDays from '../utils/addDays';
+import NavBar from './Navbar';
 
 const minDate = addDays(new Date(), 1).toISOString().slice(0, 10);
 
@@ -57,56 +58,60 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
   }, [doctors]);
 
   return (
-    <div className="container m-1">
+    <div className="main-content">
+      <NavBar />
+
       <div>
-        {pending && <img src={loader} className="center" alt="loader" />}
-        {doctor && (
-          <>
-            <div className="single-details d-grid">
-              <div className="more-info">
-                <p className="single-doctor-title">{doctor.name}</p>
-                <p className="single-doctor-title">{doctor.about}</p>
-                <p className="single-doctor-title">{doctor.specialization}</p>
-                <p className="single-doctor-title">{doctor.location}</p>
-                <p className="single-doctor-title">{doctor.fees}</p>
-                <p className="single-doctor-title">{doctor.email}</p>
+        <div>
+          {pending && <img src={loader} className="center" alt="loader" />}
+          {doctor && (
+            <>
+              <div className="single-details d-grid">
+                <div className="more-info">
+                  <p className="single-doctor-title">{doctor.name}</p>
+                  <p className="single-doctor-title">{doctor.about}</p>
+                  <p className="single-doctor-title">{doctor.specialization}</p>
+                  <p className="single-doctor-title">{doctor.location}</p>
+                  <p className="single-doctor-title">{doctor.fees}</p>
+                  <p className="single-doctor-title">{doctor.email}</p>
+                </div>
               </div>
-            </div>
 
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="date">
-                Date:
-                <input
-                  type="date"
-                  id="date"
-                  name="date"
-                  min={minDate}
-                  value={appointmentForm.date}
-                  onChange={handleChange}
-                />
-              </label>
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="date">
+                  Date:
+                  <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    min={minDate}
+                    value={appointmentForm.date}
+                    onChange={handleChange}
+                  />
+                </label>
 
-              <label htmlFor="booksCategory">
-                Select a city
-                <select
-                  name="city"
-                  id="city"
-                  onChange={handleChange}
-                  value={appointmentForm.city}
-                >
-                  <option value="All">All</option>
-                  {allCities.map(city => (
-                    <option key={city} value={city}>
-                      {city}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                <label htmlFor="booksCategory">
+                  Select a city
+                  <select
+                    name="city"
+                    id="city"
+                    onChange={handleChange}
+                    value={appointmentForm.city}
+                  >
+                    <option value="All">All</option>
+                    {allCities.map(city => (
+                      <option key={city} value={city}>
+                        {city}
+                      </option>
+                    ))}
+                  </select>
+                </label>
 
-              <input type="submit" value="Submit" />
-            </form>
-          </>
-        )}
+                <input type="submit" value="Submit" />
+              </form>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
