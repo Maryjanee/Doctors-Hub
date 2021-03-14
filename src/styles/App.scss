@@ -3,19 +3,6 @@ $padding: 1rem 1.5rem;
 $white: #fff;
 $grey: #cacaca;
 
-body {
-  background: $yellow;
-}
-
-.logo{
-  text-align: center;
-  margin:2rem auto;
-  @media (min-width: 768px) {
-
-  }
-  
-}
-
 .form-container {
   background: white;
   width: 85%;
@@ -27,7 +14,8 @@ body {
   padding: 1.5rem 2rem;
   justify-content: center;
 
-  input,button[type="submit"]  {
+  input,
+  button[type="submit"] {
     padding: 1rem 1.2rem;
     margin: 1rem 0;
     border: 0;
@@ -56,3 +44,5 @@ body {
     }
   }
 }
+
+
