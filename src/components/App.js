@@ -23,9 +23,9 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Login} />
         <Route path="/signup" component={SignUp} />
-        <ProtectedRoute path="/doctors" component={Doctors} />
+        <ProtectedRoute exact path="/doctors" component={Doctors} />
         <ProtectedRoute path="/doctor/:doctorId" component={Doctor} />
-        <ProtectedRoute path="/appointments/:userId" component={Appointment} />
+        <ProtectedRoute exact path="/appointments" component={Appointment} />
         <Route path="/*" component={FourOhFour} />
       </Switch>
     </BrowserRouter>
