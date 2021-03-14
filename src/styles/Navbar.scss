@@ -1,0 +1,95 @@
+$white: #fff;
+$black: #000;
+$green: #97BF10;
+
+body {
+  background: $white;
+}
+
+li {
+  a {
+    color: #000;
+  }
+}
+
+.menubar {
+  width: 2.5rem;
+}
+
+.logo-menu {
+  width: 100%;
+  background:#8BDDD9;
+  padding:.5rem 1.5rem;
+  
+  @media (min-width: 768px) {
+    background:$white;
+  }
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+}
+
+.logo-pr {
+  color:$white;
+  @media (min-width: 992px) {
+   color:#000;
+   margin-top:5rem;
+  }
+}
+
+.navbar__menu {
+  display: none;
+  @media (min-width: 992px) {
+    display: block;
+    margin-top: 2rem;
+  }
+}
+
+.navbar__menu-mobile {
+  li {
+    padding: 1rem 1.5rem;
+    a {
+      color: green;
+      font-weight:700;
+    }
+  }
+}
+.menubar,
+.navbar__menu-mobile {
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.main-nav {
+  @media (min-width: 768px) {
+    padding: .8rem;
+  li{
+    
+    a{
+      display: block;
+      padding:1rem 1.5rem;
+    }
+    .active{
+      background:$green;
+    }
+  }
+  }
+}
+
+.main-content {
+  @media (min-width: 768px) {
+    display: flex;
+    .main-nav {
+      height: 100vh;
+
+       box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);;
+      width: 17vw;
+    }
+  }
+}
+
