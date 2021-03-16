@@ -1,15 +1,15 @@
-:root{
+:root {
   --white: #fff;
   --black: #000;
 }
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:ital,wght@0,400;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:ital,wght@0,400;1,500&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-li{
+li {
   list-style: none;
 }
 
@@ -29,27 +29,46 @@ a {
   outline: none;
 }
 
-.small{
-  font-size:1.1rem;
+.text-upper{
+  text-transform: uppercase;
+}
+
+.small {
+  font-size: 1.1rem;
 }
 
 .d-flex {
   display: flex;
 }
 
-.justify-space-btw{
+.justify-space-btw {
   justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .flex-cl {
   flex-direction: column;
 }
 
+.align-center {
+  align-items: center;
+}
+
 .text-center {
   text-align: center;
 }
-.logo{
-  font-family: 'Dancing Script', cursive;
+.logo {
+  font-family: "Dancing Script", cursive;
+}
+
+.main-bg {
+  background: #ffb400;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 body {

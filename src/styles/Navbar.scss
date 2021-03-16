@@ -12,12 +12,16 @@ li {
   }
 }
 
+nav{
+  height:100vh;
+}
+
 .menubar {
   width: 2.5rem;
+  height: 100%;
 }
 
 .logo-menu {
-  width: 100%;
   background:#8BDDD9;
   padding:.5rem 1.5rem;
   
@@ -28,7 +32,7 @@ li {
 
 .logo {
   font-family: "Dancing Script", cursive;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .logo-pr {
@@ -68,6 +72,7 @@ li {
 .main-nav {
   @media (min-width: 768px) {
     padding: .8rem;
+    height: 100%;
   li{
     
     a{
@@ -85,8 +90,7 @@ li {
   @media (min-width: 768px) {
     display: flex;
     .main-nav {
-      height: 100vh;
-
+      height: 100%;
        box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);;
       width: 17vw;
     }
