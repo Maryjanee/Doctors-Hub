@@ -1,7 +1,8 @@
-body {
-  background:#ffb400;;
-}
+$yellow: #ffb400;
 
+body {
+  background: $yellow !important;
+}
 .logo {
   text-align: center;
   margin: 2rem auto;

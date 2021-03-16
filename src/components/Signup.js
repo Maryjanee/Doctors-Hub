@@ -1,6 +1,7 @@
 import { Link, Redirect, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import AuthService from '../services/auth-service';
+import '../styles/Signup.scss';
 
 const Signup = () => {
   const history = useHistory();

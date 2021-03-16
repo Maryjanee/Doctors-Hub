@@ -2,6 +2,7 @@
 import { Link, Redirect, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import AuthService from '../services/auth-service';
+import '../styles/Login.scss';
 
 const INITIAL_LOGIN_FORM = {
   email: '',
@@ -62,6 +63,7 @@ const Login = () => {
         {loginError && <div>{loginError}</div>}
       </div>
     </div>
+
   );
 };
 export default Login;
