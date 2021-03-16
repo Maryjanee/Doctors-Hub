@@ -1,1 +1,61 @@
 
+.carousel-cont {
+  width: 80vw;
+  margin: 1rem auto;
+  p{
+    margin: .5rem
+  }
+  a{
+    display: block;
+    padding:1rem 1.5rem;
+    margin:1rem;
+  }
+}
+
+.image-circle {
+  background: purple;
+  border-radius: 50%;
+  width: 13rem;
+  height: 13rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+
+  img {
+    width: 80%;
+  }
+}
+
+.social-links-container {
+  width: 100%;
+  
+  .logo-circle {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border: 3px solid #ebebeb;
+    text-align: center;
+    margin-right:.5rem;
+    
+    img {
+      width:1.2rem;
+      margin-top:.4rem;
+      
+    }
+  
+  }
+}
+
+.dotted {
+ width: 20%;
+ margin: .5rem auto;
+ img{
+   width:100%;
+ }
+ 
+}
+
+.slick-slide {
+  text-align: center;
+}
