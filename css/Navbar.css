@@ -1,0 +1,105 @@
+body {
+  background: #fff;
+  height: 100%;
+}
+
+li a {
+  color: #000;
+}
+
+nav {
+  height: 100vh;
+}
+
+.menubar {
+  width: 2.5rem;
+  height: 100%;
+}
+
+.logo-menu {
+  background: #8bddd9;
+  padding: 0.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .logo-menu {
+    background: #fff;
+  }
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+}
+
+.logo-pr {
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  .logo-pr {
+    color: #000;
+    margin-top: 5rem;
+  }
+}
+
+.navbar__menu {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .navbar__menu {
+    display: block;
+    margin-top: 2rem;
+  }
+}
+
+.navbar__menu-mobile li {
+  padding: 1rem 1.5rem;
+}
+
+.navbar__menu-mobile li a {
+  color: green;
+  font-weight: 700;
+}
+
+.menubar,
+.navbar__menu-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .menubar,
+  .navbar__menu-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    padding: 0.8rem;
+    height: 100%;
+  }
+  .main-nav li a {
+    display: block;
+    padding: 1rem 1.5rem;
+  }
+  .main-nav li .active {
+    background: #97bf10;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .main-content .main-nav {
+    height: 100%;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 17vw;
+  }
+}
+/*# sourceMappingURL=Navbar.css.map */

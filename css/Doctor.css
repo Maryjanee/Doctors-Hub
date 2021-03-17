@@ -1,0 +1,51 @@
+.single-doctor-container {
+  padding: 1rem 1.5rem;
+  width: 80vw;
+  -ms-grid-columns: 2.5fr 1.5fr;
+      grid-template-columns: 2.5fr 1.5fr;
+}
+
+.single-doctor-container .more-info img {
+  width: 50%;
+  margin: 2rem auto 2rem 10rem;
+}
+
+.more-details span {
+  display: inline;
+}
+
+.more-details > div:nth-child(even) {
+  background: #cacaca;
+}
+
+.more-details div {
+  padding: 1rem 1.3rem;
+  margin: .4rem 0;
+}
+
+@media (min-width: 992px) {
+  .more-details form {
+    margin-top: 2rem;
+  }
+  .more-details form label {
+    font-size: 1.1rem;
+  }
+  .more-details form input, .more-details form select {
+    padding: 1rem 1.3rem;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+  }
+  .more-details form button[type="submit"] {
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    border: 0;
+    width: 100%;
+    font-size: 1.15rem;
+    background: #f2f2f2;
+    color: #fff;
+    background: #97BF10;
+    border-radius: 2rem;
+  }
+}
+/*# sourceMappingURL=Doctor.css.map */

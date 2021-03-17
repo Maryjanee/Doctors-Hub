@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAppointments } from '../actions/index';
-import NavBar from '../containers/Navbar';
+import NavBar from './Navbar';
 import '../styles/Appointments.scss';
 
 const Appointment = () => {

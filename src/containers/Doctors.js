@@ -6,7 +6,7 @@ import Carousel from 'react-multi-carousel';
 import { fetchDoctors } from '../actions/index';
 import loader from '../assets/doctor.gif';
 import '../styles/Doctors.scss';
-import NavBar from './Navbar';
+import NavBar from '../components/Navbar';
 import dotted from '../assets/dotted.svg';
 import twitterLogo from '../assets/twitter.svg';
 import instagram from '../assets/instagram.svg';
@@ -14,7 +14,7 @@ import faceBook from '../assets/facebook.svg';
 
 import 'react-multi-carousel/lib/styles.css';
 
-const Doctors = ({
+export const Doctors = ({
   fetchAllDoctors, doctors, pending, error,
 }) => {
   useEffect(() => {

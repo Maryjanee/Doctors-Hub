@@ -9,7 +9,7 @@ import { createAppointment } from '../actions/index';
 import validDate from '../utils/validDate';
 // import { getUserIdFromToken } from '../utils/token';
 import addDays from '../utils/addDays';
-import NavBar from './Navbar';
+import NavBar from '../components/Navbar';
 import '../styles/Doctor.scss';
 
 const minDate = addDays(new Date(), 1).toISOString().slice(0, 10);
