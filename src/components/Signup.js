@@ -28,7 +28,7 @@ const Signup = () => {
       const response = await AuthService.signUp(signupForm);
       console.log(response);
       if (response && !response.error) {
-        history.push('/login');
+        history.push('/');
       }
       if (!response || response.error) {
         setSignupError('An Error Occurred. Please try again');
@@ -41,25 +41,51 @@ const Signup = () => {
   }
 
   return (
-    <div className="container">
+    <div className="main-bg">
+      <div className="container">
+        <h1 className="logo">Doctors Hub</h1>
 
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <input type="text" id="username" name="username" onChange={handleChange} placeholder="Username" />
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              onChange={handleChange}
+              placeholder="Username"
+            />
 
-          <input type="email" id="email" name="email" onChange={handleChange} placeholder="Email" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              onChange={handleChange}
+              placeholder="Email"
+            />
 
-          <input type="password" id="password" name="password" onChange={handleChange} placeholder="Password" />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              onChange={handleChange}
+              placeholder="Password"
+            />
 
-          <button type="submit" className="submit">Create an Account</button>
-        </form>
-        <p className="text-center small">
-          Already a member?
-          <Link to="/" className="create">Log In</Link>
-        </p>
-        {SignupError && <div>{SignupError}</div>}
+            <button type="submit" className="submit">
+              Create an Account
+            </button>
+          </form>
+          <p className="text-center small">
+            Already a member?
+            <Link to="/" className="create">
+              Log In
+            </Link>
+          </p>
+          {SignupError && <div>{SignupError}</div>}
+        </div>
       </div>
     </div>
+
   );
 };
 export default Signup;

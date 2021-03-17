@@ -44,23 +44,25 @@ const Login = () => {
   }
 
   return (
-    <div className="container">
-      <h1 className="logo">Doctors Hub</h1>
-      <div className="form-container">
-        <form onSubmit={handleSubmit} className="d-flex flex-cl">
+    <div className="main-bg">
+      <div className="container">
+        <h1 className="logo">Doctors Hub</h1>
+        <div className="form-container">
+          <form onSubmit={handleSubmit} className="d-flex flex-cl">
 
-          <input type="email" id="email" placeholder="Username" name="email" value={loginForm.email} onChange={handleChange} />
+            <input type="email" id="email" placeholder="Username" name="email" value={loginForm.email} onChange={handleChange} />
 
-          <input type="password" id="password" name="password" placeholder="Password" value={loginForm.password} onChange={handleChange} />
+            <input type="password" id="password" name="password" placeholder="Password" value={loginForm.password} onChange={handleChange} />
 
-          <input type="submit" value="Login" className="submit" />
-        </form>
+            <input type="submit" value="Login" className="submit" />
+          </form>
 
-        <p className="text-center">
-          Not Registered?
-          <Link to="/signup" className="create">Create an Account</Link>
-        </p>
-        {loginError && <div>{loginError}</div>}
+          <p className="text-center">
+            Not Registered?
+            <Link to="/signup" className="create">Create an Account</Link>
+          </p>
+          {loginError && <div>{loginError}</div>}
+        </div>
       </div>
     </div>
 

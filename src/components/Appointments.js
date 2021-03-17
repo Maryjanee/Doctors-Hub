@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAppointments } from '../actions/index';
 import NavBar from '../containers/Navbar';
+import '../styles/Appointments.scss';
 
 const Appointment = () => {
   const dispatch = useDispatch();
@@ -15,14 +16,26 @@ const Appointment = () => {
   return (
     <div className="main-content">
       <NavBar />
-      <div>
-        <h1>All Appointments</h1>
-        <div>
+      <div className="border-test">
+        <h3 className="text-center">All Appointments</h3>
+        <div className="appointment-container">
           {appointments
             && appointments.map(appointment => (
-              <div className="more-info" key={appointment.id}>
-                <p className="single-appointment-title">
+              <div className="appointment" key={appointment.id}>
+                <p>
+                  Doctor:
+                  {' '}
                   {appointment.doctor_name}
+                </p>
+                <p>
+                  Appointment Date:
+                  {' '}
+                  {appointment.date}
+                </p>
+                <p>
+                  City:
+                  {' '}
+                  {appointment.city}
                 </p>
               </div>
             ))}

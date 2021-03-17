@@ -1,0 +1,54 @@
+.single-doctor-container {
+  padding:1rem 1.5rem;
+  width:80vw;
+  grid-template-columns: 2.5fr 1.5fr;
+ .more-info {
+ 
+  img{
+    width:50%;
+    margin:2rem auto 2rem 10rem;
+  }
+ }
+}
+
+.more-details{
+  span{
+    display: inline;
+  }
+  > div:nth-child(even){
+    background: #cacaca;
+  }
+  div{
+    padding: 1rem 1.3rem;
+    margin:.4rem 0;
+   
+  }
+
+  form{
+    @media (min-width: 992px) {
+      margin-top:2rem;
+      label{
+        font-size:1.1rem;
+      }
+      input, select{
+        padding: 1rem 1.3rem;
+        width:100%;
+        margin:1rem 0;
+        font-size:1.1rem;
+
+      }
+
+      button[type="submit"] {
+        padding: 1rem 1.2rem;
+        margin: 1rem 0;
+        border: 0;
+        width: 100%;
+        font-size: 1.15rem;
+        background: #f2f2f2;
+        color: #fff;
+        background: #97BF10;
+        border-radius: 2rem;
+      }
+    }
+  }
+}

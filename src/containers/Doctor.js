@@ -10,6 +10,7 @@ import validDate from '../utils/validDate';
 // import { getUserIdFromToken } from '../utils/token';
 import addDays from '../utils/addDays';
 import NavBar from './Navbar';
+import '../styles/Doctor.scss';
 
 const minDate = addDays(new Date(), 1).toISOString().slice(0, 10);
 
@@ -21,6 +22,7 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
     date: '',
     city: '',
   });
+  const [notification, setNotification] = useState(null);
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -44,10 +46,10 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
       if (validDate(date)) {
         createAnAppointment(newAppointment);
       } else {
-        console.log('An error with your date');
+        setNotification('An Error Occurred, ');
       }
     }
-
+    setNotification('Form Submitted Sucessfully');
     updateAppointmentForm({ date: '', city: '' });
   };
   useEffect(() => {
@@ -65,51 +67,64 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
         <div>
           {pending && <img src={loader} className="center" alt="loader" />}
           {doctor && (
-            <>
-              <div className="single-details d-grid">
+            <div className="single-doctor-container d-grid">
+              <div className="single-details">
+                {notification && <p className="notification-bar">{notification}</p> }
                 <div className="more-info">
-                  <p className="single-doctor-title">{doctor.name}</p>
-                  <p className="single-doctor-title">{doctor.about}</p>
-                  <p className="single-doctor-title">{doctor.specialization}</p>
-                  <p className="single-doctor-title">{doctor.location}</p>
-                  <p className="single-doctor-title">{doctor.fees}</p>
-                  <p className="single-doctor-title">{doctor.email}</p>
+                  <img src={doctor.photo} alt="doctor" />
                 </div>
               </div>
+              <div className="more-details">
+                <div className="text-right my-1 text-upper">
+                  <span>DR.</span>
+                  <p>{doctor.name}</p>
+                </div>
+                <div className="d-flex justify-space-btw">
+                  <p>Fees</p>
+                  <p>{doctor.fees}</p>
+                </div>
 
-              <form onSubmit={handleSubmit}>
-                <label htmlFor="date">
-                  Date:
-                  <input
-                    type="date"
-                    id="date"
-                    name="date"
-                    min={minDate}
-                    value={appointmentForm.date}
-                    onChange={handleChange}
-                  />
-                </label>
+                <div className="d-flex justify-space-btw">
+                  <p>Duration</p>
+                  <p>1 Hour</p>
+                </div>
+                <div className="d-flex justify-space-btw">
+                  <p>Duration</p>
+                  <p>1 Hour</p>
+                </div>
+                <form onSubmit={handleSubmit} className="d-flex flex-cl">
+                  <label htmlFor="date">
+                    Date
+                    <input
+                      type="date"
+                      id="date"
+                      name="date"
+                      min={minDate}
+                      value={appointmentForm.date}
+                      onChange={handleChange}
+                    />
+                  </label>
 
-                <label htmlFor="booksCategory">
-                  Select a city
-                  <select
-                    name="city"
-                    id="city"
-                    onChange={handleChange}
-                    value={appointmentForm.city}
-                  >
-                    <option value="All">All</option>
-                    {allCities.map(city => (
-                      <option key={city} value={city}>
-                        {city}
-                      </option>
-                    ))}
-                  </select>
-                </label>
+                  <label htmlFor="cities">
+                    City
+                    <select
+                      name="city"
+                      id="city"
+                      onChange={handleChange}
+                      value={appointmentForm.city}
+                    >
+                      {allCities.map(city => (
+                        <option key={city} value={city}>
+                          {city}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
 
-                <input type="submit" value="Submit" />
-              </form>
-            </>
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
+            </div>
           )}
         </div>
       </div>

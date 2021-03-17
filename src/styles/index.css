@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+body, html{
+  height:100%;
+}
+
 li {
   list-style: none;
 }
@@ -27,10 +31,25 @@ a {
   background: #ffb400 !important;
   color: #fff !important;
   outline: none;
+  border: 0;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  width: 100%;
+  font-size: 1.15rem;
+  background: #f2f2f2;
+  color: black;
 }
 
-.text-upper{
+.text-upper {
   text-transform: uppercase;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.my-1{
+  margin:1rem 0;
 }
 
 .small {
@@ -41,12 +60,29 @@ a {
   display: flex;
 }
 
+.d-grid {
+  display: grid;
+}
+
 .justify-space-btw {
   justify-content: space-between;
 }
 
 .justify-center {
   justify-content: center;
+}
+
+.border-test{
+  width:70vw;
+  
+}
+
+.notification-bar {
+  width:50%;
+  height: auto;
+  color:#fff;
+  background: red;
+  padding:1rem 1.5rem;
 }
 
 .flex-cl {

@@ -1,9 +1,10 @@
 $white: #fff;
 $black: #000;
-$green: #97BF10;
+$green: #97bf10;
 
 body {
   background: $white;
+  height: 100%;
 }
 
 li {
@@ -12,8 +13,8 @@ li {
   }
 }
 
-nav{
-  height:100vh;
+nav {
+  height: 100vh;
 }
 
 .menubar {
@@ -22,11 +23,11 @@ nav{
 }
 
 .logo-menu {
-  background:#8BDDD9;
-  padding:.5rem 1.5rem;
-  
+  background: #8bddd9;
+  padding: 0.5rem 1.5rem;
+
   @media (min-width: 768px) {
-    background:$white;
+    background: $white;
   }
 }
 
@@ -36,10 +37,10 @@ nav{
 }
 
 .logo-pr {
-  color:$white;
+  color: $white;
   @media (min-width: 992px) {
-   color:#000;
-   margin-top:5rem;
+    color: #000;
+    margin-top: 5rem;
   }
 }
 
@@ -56,7 +57,7 @@ nav{
     padding: 1rem 1.5rem;
     a {
       color: green;
-      font-weight:700;
+      font-weight: 700;
     }
   }
 }
@@ -71,18 +72,17 @@ nav{
 
 .main-nav {
   @media (min-width: 768px) {
-    padding: .8rem;
+    padding: 0.8rem;
     height: 100%;
-  li{
-    
-    a{
-      display: block;
-      padding:1rem 1.5rem;
+    li {
+      a {
+        display: block;
+        padding: 1rem 1.5rem;
+      }
+      .active {
+        background: $green;
+      }
     }
-    .active{
-      background:$green;
-    }
-  }
   }
 }
 
@@ -91,9 +91,8 @@ nav{
     display: flex;
     .main-nav {
       height: 100%;
-       box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       width: 17vw;
     }
   }
 }
-
