@@ -1,19 +1,18 @@
 
 .carousel-cont {
   width: 80vw;
-  margin: 1rem auto;
+  margin: .5rem auto;
   p{
     margin: .5rem
   }
   a{
     display: block;
     padding:1rem 1.5rem;
-    margin:1rem;
+    margin:.5rem;
   }
 }
 
 .image-circle {
-  background: purple;
   border-radius: 50%;
   width: 13rem;
   height: 13rem;
@@ -21,7 +20,9 @@
   justify-content: center;
   align-items: center;
   margin: 1rem auto;
-
+  :nth-child(1){
+    background: grey;
+  }
   img {
     width: 80%;
   }
@@ -49,7 +50,7 @@
 
 .dotted {
  width: 20%;
- margin: .5rem auto;
+ margin: .1rem auto;
  img{
    width:100%;
  }

@@ -29,7 +29,7 @@ nav {
 
 .logo {
   font-family: "Dancing Script", cursive;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .logo-pr {
@@ -58,9 +58,15 @@ nav {
   padding: 1rem 1.5rem;
 }
 
-.navbar__menu-mobile li a {
+.navbar__menu-mobile li a, .navbar__menu-mobile li button {
   color: green;
   font-weight: 700;
+  border: 0;
+}
+
+.navbar__menu-mobile li button {
+  background: red;
+  padding: 1rem 1.5rem;
 }
 
 .menubar,
@@ -80,12 +86,18 @@ nav {
     padding: 0.8rem;
     height: 100%;
   }
-  .main-nav li a {
+  .main-nav li a, .main-nav li button {
     display: block;
     padding: 1rem 1.5rem;
+    width: 100%;
+    border: 0;
+    margin: 1rem 0;
   }
   .main-nav li .active {
     background: #97bf10;
+  }
+  .main-nav li button {
+    background: red;
   }
 }
 

@@ -33,7 +33,7 @@ nav {
 
 .logo {
   font-family: "Dancing Script", cursive;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .logo-pr {
@@ -55,9 +55,14 @@ nav {
 .navbar__menu-mobile {
   li {
     padding: 1rem 1.5rem;
-    a {
+    a, button {
       color: green;
       font-weight: 700;
+      border:0;
+    }
+    button{
+      background: red;
+     padding: 1rem 1.5rem;
     }
   }
 }
@@ -75,12 +80,18 @@ nav {
     padding: 0.8rem;
     height: 100%;
     li {
-      a {
+      a, button{
         display: block;
         padding: 1rem 1.5rem;
+        width:100%;
+        border:0;
+        margin: 1rem 0;
       }
       .active {
         background: $green;
+      }
+      button{
+        background: red;
       }
     }
   }

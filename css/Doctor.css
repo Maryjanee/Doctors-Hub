@@ -10,8 +10,9 @@
   margin: 2rem auto 2rem 10rem;
 }
 
-.more-details span {
+.title {
   display: inline;
+  margin-right: .3rem;
 }
 
 .more-details > div:nth-child(even) {
@@ -19,26 +20,23 @@
 }
 
 .more-details div {
-  padding: 1rem 1.3rem;
+  padding: .7rem 1.3rem;
   margin: .4rem 0;
 }
 
 @media (min-width: 992px) {
-  .more-details form {
-    margin-top: 2rem;
-  }
   .more-details form label {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .more-details form input, .more-details form select {
-    padding: 1rem 1.3rem;
+    padding: .5rem 1.3rem;
     width: 100%;
-    margin: 1rem 0;
+    margin: .5rem 0;
     font-size: 1.1rem;
   }
   .more-details form button[type="submit"] {
-    padding: 1rem 1.2rem;
-    margin: 1rem 0;
+    padding: .5rem 1.2rem;
+    margin: .6rem 0;
     border: 0;
     width: 100%;
     font-size: 1.15rem;
