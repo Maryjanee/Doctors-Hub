@@ -41,16 +41,13 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
     };
     const { city, date } = newAppointment;
 
-    if (city && date) {
-      console.log(newAppointment);
-      if (validDate(date)) {
-        createAnAppointment(newAppointment);
-      } else {
-        setNotification('An Error Occurred, ');
-      }
+    if (city && date && validDate(date)) {
+      createAnAppointment(newAppointment);
+      setNotification('Form Submitted Sucessfully');
+      updateAppointmentForm({ date: '', city: '' });
+    } else {
+      setNotification('An Error Occurred');
     }
-    setNotification('Form Submitted Sucessfully');
-    updateAppointmentForm({ date: '', city: '' });
   };
   useEffect(() => {
     if (doctorId) {
@@ -76,8 +73,11 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
               </div>
               <div className="more-details">
                 <div className="text-right my-1 text-upper">
-                  <span>DR.</span>
-                  <p>{doctor.name}</p>
+                  <p>
+                    <span className="title">DR.</span>
+                    {' '}
+                    {doctor.name}
+                  </p>
                 </div>
                 <div className="d-flex justify-space-btw">
                   <p>Fees</p>
@@ -113,6 +113,7 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
                       onChange={handleChange}
                       value={appointmentForm.city}
                     >
+                      <option value="">Please select a city</option>
                       {allCities.map(city => (
                         <option key={city} value={city}>
                           {city}

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAppointments } from '../actions/index';
+import { deleteAppointment, fetchAppointments } from '../actions/index';
 import NavBar from './Navbar';
 import '../styles/Appointments.scss';
 
@@ -10,9 +10,14 @@ const Appointment = () => {
     state => state.appointmentsReducer.appointments,
   );
 
+  const deleteUserAppointment = id => {
+    dispatch(deleteAppointment(id));
+  };
+
   useEffect(() => {
     dispatch(fetchAppointments());
   }, []);
+
   return (
     <div className="main-content">
       <NavBar />
@@ -37,6 +42,13 @@ const Appointment = () => {
                   {' '}
                   {appointment.city}
                 </p>
+                <button
+                  type="button"
+                  className="submit"
+                  onClick={() => deleteUserAppointment(appointment.id)}
+                >
+                  Delete
+                </button>
               </div>
             ))}
         </div>

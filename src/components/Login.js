@@ -50,7 +50,7 @@ const Login = () => {
         <div className="form-container">
           <form onSubmit={handleSubmit} className="d-flex flex-cl">
 
-            <input type="email" id="email" placeholder="Username" name="email" value={loginForm.email} onChange={handleChange} />
+            <input type="email" id="email" placeholder="Email" name="email" value={loginForm.email} onChange={handleChange} />
 
             <input type="password" id="password" name="password" placeholder="Password" value={loginForm.password} onChange={handleChange} />
 
