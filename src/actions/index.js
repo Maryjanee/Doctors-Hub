@@ -1,10 +1,16 @@
+/* eslint-disable import/no-named-as-default */
 import AppointmentService from '../services/appointments_service';
 import DoctorsService from '../services/doctors-service';
 import { getUserIdFromToken } from '../utils/token';
 import {
-  GET_DOCTORS_PENDING, GET_DOCTORS_SUCCESS, GET_DOCTORS_ERROR,
-  GET_USER_APPOINTMENTS_PENDING, GET_USER_APPOINTMENTS_SUCCESS,
-  GET_USER_APPOINTMENTS_ERROR, CREATE_USER_APPOINTMENT_SUCCESS,
+  GET_DOCTORS_PENDING,
+  GET_DOCTORS_SUCCESS,
+  GET_DOCTORS_ERROR,
+  GET_USER_APPOINTMENTS_PENDING,
+  GET_USER_APPOINTMENTS_SUCCESS,
+  GET_USER_APPOINTMENTS_ERROR,
+  CREATE_USER_APPOINTMENT_SUCCESS,
+  DELETE_USER_APPOINTMENT,
 } from '../types';
 
 export const getDoctorPending = () => ({
@@ -45,9 +51,16 @@ export const createUserAppointmentError = error => ({
   payload: error,
 });
 
+export const deleteUserAppointment = id => ({
+  type: DELETE_USER_APPOINTMENT,
+  payload: id,
+});
+
 export const createAppointment = details => async dispatch => {
   try {
-    const appointmentDetails = await AppointmentService.createAppointment(details);
+    const appointmentDetails = await AppointmentService.createAppointment(
+      details,
+    );
     dispatch(createUserAppointmentSuccess(appointmentDetails));
   } catch (error) {
     const errorMsg = error.error;
@@ -72,6 +85,16 @@ export const fetchAppointments = () => async dispatch => {
   try {
     const appointments = await AppointmentService.getAppointment(userId);
     dispatch(getUserAppointmentsSuccess(appointments));
+  } catch (error) {
+    const errorMsg = error.error;
+    dispatch(getUserAppointmentsError(errorMsg));
+  }
+};
+
+export const deleteAppointment = id => async dispatch => {
+  try {
+    await AppointmentService.deleteAppointment(id);
+    dispatch(deleteUserAppointment(id));
   } catch (error) {
     const errorMsg = error.error;
     dispatch(getUserAppointmentsError(errorMsg));

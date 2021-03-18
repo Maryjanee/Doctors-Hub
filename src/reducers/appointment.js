@@ -3,6 +3,7 @@ import {
   GET_USER_APPOINTMENTS_SUCCESS,
   GET_USER_APPOINTMENTS_ERROR,
   CREATE_USER_APPOINTMENT_SUCCESS,
+  DELETE_USER_APPOINTMENT,
 }
   from '../types';
 
@@ -18,7 +19,10 @@ const appointmentReducer = (state = initialState, action) => {
       return { ...state, pending: true };
     case GET_USER_APPOINTMENTS_SUCCESS:
       return {
-        ...state, pending: false, appointments: action.payload, error: '',
+        ...state,
+        pending: false,
+        appointments: action.payload,
+        error: '',
       };
     case GET_USER_APPOINTMENTS_ERROR:
       return {
@@ -26,7 +30,17 @@ const appointmentReducer = (state = initialState, action) => {
       };
     case CREATE_USER_APPOINTMENT_SUCCESS:
       return {
-        ...state, pending: false, appointments: [...state.appointments, action.payload], error: '',
+        ...state,
+        pending: false,
+        appointments: [...state.appointments, action.payload],
+        error: '',
+      };
+
+    case DELETE_USER_APPOINTMENT:
+      return {
+        ...state,
+        pending: false,
+        appointments: state.appointments.filter(appointment => action.payload !== appointment.id),
       };
 
     default:

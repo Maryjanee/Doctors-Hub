@@ -22,4 +22,14 @@ export default class AppointmentService {
       throw handledError;
     }
   }
+
+  static async deleteAppointment(appointmentId) {
+    try {
+      const { data } = await securedAxios.delete(`/appointments/${appointmentId}`);
+      return data;
+    } catch (error) {
+      const handledError = handleError(error);
+      throw handledError;
+    }
+  }
 }
