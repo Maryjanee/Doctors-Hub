@@ -22,7 +22,7 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
     date: '',
     city: '',
   });
-  const [notification, setNotification] = useState(null);
+  const [notification, setNotification] = useState({ type: '', message: '' });
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -43,10 +43,10 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
 
     if (city && date && validDate(date)) {
       createAnAppointment(newAppointment);
-      setNotification('Form Submitted Sucessfully');
+      setNotification({ type: 'success', message: 'Form submitted sucessfully' });
       updateAppointmentForm({ date: '', city: '' });
     } else {
-      setNotification('An Error Occurred');
+      setNotification({ type: 'error', message: 'Please fill in all details.' });
     }
   };
   useEffect(() => {
@@ -61,7 +61,12 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
       <div>
         <div>
           {pending && <img src={loader} className="center" alt="loader" />}
-          {notification && <span className="notification-bar">{notification}</span> }
+          {notification.message
+            && (
+            <span className={`notification ${notification.type}`}>
+              {notification.message}
+            </span>
+            )}
           {doctor && (
             <div className="single-doctor-container">
               <div className="doctor-image">

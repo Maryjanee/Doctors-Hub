@@ -36,6 +36,8 @@ const Login = () => {
       if (!response || response.error) {
         setLoginError('Login failed. Please try again');
       }
+    } else {
+      setLoginError('Please enter your login details');
     }
   };
 
@@ -45,9 +47,9 @@ const Login = () => {
 
   return (
     <div className="main-bg">
-      {loginError && <div className="notification-bar">{loginError}</div>}
       <div className="container">
         <h1 className="logo">Doctors Hub</h1>
+        {loginError && <div className="notification error">{loginError}</div>}
         <div className="form-container">
           <form onSubmit={handleSubmit} className="d-flex flex-cl">
 

@@ -19,18 +19,16 @@ const Appointment = () => {
   }, []);
 
   return (
-    <div className="main-content">
-      <h3 className="text-center">All Appointments</h3>
-      <h6 className="text-center">
+    <div className="appointments">
+      <h2 className="text-center">All Appointments</h2>
+      <h4 className="text-center">
         Hello
         {' '}
         {getUsernameFromToken()}
-        {appointments.length === 0 ? (
-          <span> You have no appointments</span>
-        ) : (
-          <span> Here are your appointments</span>
-        )}
-      </h6>
+        {appointments.length === 0
+          ? 'You have no appointments'
+          : ', here are your appointments'}
+      </h4>
       <div className="appointment-container">
         {appointments
           && appointments.map(appointment => (

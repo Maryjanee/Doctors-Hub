@@ -5,7 +5,7 @@ import '../styles/Signup.scss';
 
 const Signup = () => {
   const history = useHistory();
-  const [SignupError, setSignupError] = useState(null);
+  const [signupError, setSignupError] = useState(null);
   const [signupForm, updateSignupForm] = useState({
     username: '',
     email: '',
@@ -22,17 +22,17 @@ const Signup = () => {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    console.log({ signupForm });
     const { username, email, password } = signupForm;
     if (username && email && password) {
       const response = await AuthService.signUp(signupForm);
-      console.log(response);
       if (response && !response.error) {
         history.push('/');
       }
       if (!response || response.error) {
-        setSignupError('An Error Occurred. Please try again');
+        setSignupError('An error occurred. Please try again');
       }
+    } else {
+      setSignupError('All fields are required');
     }
   };
 
@@ -42,7 +42,7 @@ const Signup = () => {
 
   return (
     <div className="main-bg">
-      {SignupError && <div className="notification-bar">{SignupError}</div>}
+      {signupError && <div className="notification error">{signupError}</div>}
       <div className="container">
         <h1 className="logo">Doctors Hub</h1>
 
