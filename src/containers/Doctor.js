@@ -90,8 +90,8 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
                   <p>1 Hour</p>
                 </div>
                 <div className="d-flex justify-space-btw">
-                  <p>Duration</p>
-                  <p>1 Hour</p>
+                  <p>Time Available</p>
+                  <p>2pm</p>
                 </div>
                 <form onSubmit={handleSubmit} className="d-flex flex-cl">
                   <label htmlFor="date">

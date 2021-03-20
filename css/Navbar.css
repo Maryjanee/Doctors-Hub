@@ -58,7 +58,8 @@ nav {
   padding: 1rem 1.5rem;
 }
 
-.navbar__menu-mobile li a, .navbar__menu-mobile li button {
+.navbar__menu-mobile li a,
+.navbar__menu-mobile li button {
   color: green;
   font-weight: 700;
   border: 0;
@@ -86,16 +87,20 @@ nav {
     padding: 0.8rem;
     height: 100%;
   }
-  .main-nav li a, .main-nav li button {
+
+  .main-nav li a,
+  .main-nav li button {
     display: block;
     padding: 1rem 1.5rem;
     width: 100%;
     border: 0;
     margin: 1rem 0;
   }
+
   .main-nav li .active {
     background: #97bf10;
   }
+
   .main-nav li button {
     background: red;
   }
@@ -107,11 +112,11 @@ nav {
     display: -ms-flexbox;
     display: flex;
   }
+
   .main-content .main-nav {
     height: 100%;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 17vw;
   }
 }
-/*# sourceMappingURL=Navbar.css.map */

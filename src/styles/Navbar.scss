@@ -1,6 +1,8 @@
 $white: #fff;
 $black: #000;
-$green: #97bf10;
+$green: #b6c479;
+$red: #e05050;
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +16,7 @@ body {
 
 li {
   a {
-    color: #000;
+    color: $black;
   }
 }
 
@@ -24,7 +26,7 @@ li {
 }
 
 .logo-menu {
-  background: #8bddd9;
+  background: $green;
   padding: 0.5rem 1.5rem;
 
   @media (min-width: 768px) {
@@ -39,14 +41,16 @@ li {
 
 .logo-pr {
   color: $white;
+
   @media (min-width: 992px) {
-    color: #000;
+    color: $black;
     margin-top: 5rem;
   }
 }
 
 .navbar__menu {
   display: none;
+
   @media (min-width: 768px) {
     display: block;
     margin-top: 2rem;
@@ -56,18 +60,21 @@ li {
 .navbar__menu-mobile {
   li {
     padding: 1rem 1.5rem;
+
     a,
     button {
-      color: #b6c479;
+      color: $black;
       font-weight: 700;
       border: 0;
     }
+
     button {
-      background: #e05050;
+      background: $red;
       padding: 1rem 1.5rem;
     }
   }
 }
+
 .menubar,
 .navbar__menu-mobile {
   display: block;
@@ -81,6 +88,7 @@ li {
   @media (min-width: 768px) {
     padding: 0.8rem;
     height: 100%;
+
     li {
       a,
       button {
@@ -90,11 +98,13 @@ li {
         border: 0;
         margin: 1rem 0;
       }
+
       .active {
         background: $green;
       }
+
       button {
-        background: red;
+        background: $red;
       }
     }
   }

@@ -5,12 +5,12 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
-          transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
   position: absolute;
   padding: 1.5rem 2rem;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .form-container input,
@@ -38,10 +38,10 @@
   .form-container {
     width: 35%;
   }
+
   .form-container input[type="email"]:focus,
   .form-container input[type="text"]:focus,
   .form-container input[type="password"]:focus {
     outline: 2px solid #ffb400;
   }
 }
-/*# sourceMappingURL=App.css.map */

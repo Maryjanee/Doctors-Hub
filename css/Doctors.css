@@ -1,16 +1,16 @@
 .carousel-cont {
   width: 80vw;
-  margin: .5rem auto;
+  margin: 0.5rem auto;
 }
 
 .carousel-cont p {
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .carousel-cont a {
   display: block;
   padding: 1rem 1.5rem;
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .image-circle {
@@ -21,11 +21,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 1rem auto;
 }
 
@@ -47,17 +47,17 @@
   border-radius: 50%;
   border: 3px solid #ebebeb;
   text-align: center;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .social-links-container .logo-circle img {
   width: 1.2rem;
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .dotted {
   width: 20%;
-  margin: .1rem auto;
+  margin: 0.1rem auto;
 }
 
 .dotted img {
@@ -67,4 +67,3 @@
 .slick-slide {
   text-align: center;
 }
-/*# sourceMappingURL=Doctors.css.map */

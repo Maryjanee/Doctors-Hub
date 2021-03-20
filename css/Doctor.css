@@ -2,7 +2,7 @@
   padding: 1rem 1.5rem;
   width: 80vw;
   -ms-grid-columns: 2.5fr 1.5fr;
-      grid-template-columns: 2.5fr 1.5fr;
+  grid-template-columns: 2.5fr 1.5fr;
 }
 
 .single-doctor-container .more-info img {
@@ -12,7 +12,7 @@
 
 .title {
   display: inline;
-  margin-right: .3rem;
+  margin-right: 0.3rem;
 }
 
 .more-details > div:nth-child(even) {
@@ -20,30 +20,32 @@
 }
 
 .more-details div {
-  padding: .7rem 1.3rem;
-  margin: .4rem 0;
+  padding: 0.7rem 1.3rem;
+  margin: 0.4rem 0;
 }
 
 @media (min-width: 992px) {
   .more-details form label {
     font-size: 1rem;
   }
-  .more-details form input, .more-details form select {
-    padding: .5rem 1.3rem;
+
+  .more-details form input,
+  .more-details form select {
+    padding: 0.5rem 1.3rem;
     width: 100%;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     font-size: 1.1rem;
   }
+
   .more-details form button[type="submit"] {
-    padding: .5rem 1.2rem;
-    margin: .6rem 0;
+    padding: 0.5rem 1.2rem;
+    margin: 0.6rem 0;
     border: 0;
     width: 100%;
     font-size: 1.15rem;
     background: #f2f2f2;
     color: #fff;
-    background: #97BF10;
+    background: #97bf10;
     border-radius: 2rem;
   }
 }
-/*# sourceMappingURL=Doctor.css.map */

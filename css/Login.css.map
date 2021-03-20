@@ -1,9 +1,13 @@
 {
-    "version": 3,
-    "mappings": "AACA,AAAA,KAAK,CAAC;EACJ,MAAM,EAAE,SAAS;CAElB",
-    "sources": [
-        "../src/styles/Login.scss"
-    ],
-    "names": [],
+  "version": 3,
+    "mappings": "AACA,AAAA,KAAK,CAACEACJ,MAAM,EAAE,SAASCAElB"
+  ,
+    "sources":
+    [
+    "../src/styles/Login.scss"
+    ]
+  ,
+    "names": []
+  ,
     "file": "Login.css"
 }
