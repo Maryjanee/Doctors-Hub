@@ -6,7 +6,6 @@ import Carousel from 'react-multi-carousel';
 import { fetchDoctors } from '../actions/index';
 import loader from '../assets/doctor.gif';
 import '../styles/Doctors.scss';
-import NavBar from '../components/Navbar';
 import dotted from '../assets/dotted.svg';
 import twitterLogo from '../assets/twitter.svg';
 import instagram from '../assets/instagram.svg';
@@ -42,9 +41,26 @@ const Doctors = ({
     },
   };
 
+  const getRandom = () => Math.round(Math.random() * 4);
+
+  const getClass = () => {
+    const random = getRandom();
+    switch (random) {
+      case 1:
+        return 'backg-light-green';
+      case 2:
+        return 'backg-light-red';
+      case 3:
+        return 'backg-light-yellow';
+      case 4:
+        return 'backg-light-grey';
+      default:
+        return 'backg-light-green';
+    }
+  };
+
   return (
     <div className="main-content">
-      <NavBar />
       <div className="container">
         <h2 className="text-center">All Doctors</h2>
         <p className="text-center">Please Pick A Doctor </p>
@@ -54,7 +70,7 @@ const Doctors = ({
           {!pending && !error && doctors.map(doctor => (
             <Link to={`doctor/${doctor.id}`} key={doctor.id}>
               <div className="more-info">
-                <div className="image-circle">
+                <div className={`image-circle ${getClass()}`}>
                   <img className="doctor-img" src={doctor.photo} alt="doctor" />
                 </div>
                 <div>

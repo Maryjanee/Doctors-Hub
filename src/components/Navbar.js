@@ -30,7 +30,7 @@ const NavBar = () => {
             <NavLink
               to="/doctors"
               className="nav-links"
-              isActive={(match, location) => !match && /doctor/.test(location.pathname)}
+              isActive={(match, location) => match || (!match && /doctor/.test(location.pathname))}
             >
               All Doctors
             </NavLink>

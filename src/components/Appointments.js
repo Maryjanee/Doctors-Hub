@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteAppointment, fetchAppointments } from '../actions/index';
-import NavBar from './Navbar';
+import { getUsernameFromToken } from '../utils/token';
 import '../styles/Appointments.scss';
 
 const Appointment = () => {
@@ -20,38 +20,42 @@ const Appointment = () => {
 
   return (
     <div className="main-content">
-      <NavBar />
-      <div className="border-test">
-        <h3 className="text-center">All Appointments</h3>
-        <div className="appointment-container">
-          {appointments
-            && appointments.map(appointment => (
-              <div className="appointment" key={appointment.id}>
-                <p>
-                  Doctor:
-                  {' '}
-                  {appointment.doctor_name}
-                </p>
-                <p>
-                  Appointment Date:
-                  {' '}
-                  {appointment.date}
-                </p>
-                <p>
-                  City:
-                  {' '}
-                  {appointment.city}
-                </p>
-                <button
-                  type="button"
-                  className="submit"
-                  onClick={() => deleteUserAppointment(appointment.id)}
-                >
-                  Delete
-                </button>
-              </div>
-            ))}
-        </div>
+      <h3 className="text-center">All Appointments</h3>
+      <h6 className="text-center">
+        Hello
+        {' '}
+        {getUsernameFromToken()}
+        {appointments.length === 0 ? (
+          <span> You have no appointments</span>
+        ) : (
+          <span> Here are your appointments</span>
+        )}
+      </h6>
+      <div className="appointment-container">
+        {appointments
+          && appointments.map(appointment => (
+            <div className="appointment" key={appointment.id}>
+              <p>
+                Doctor:
+                {appointment.doctor_name}
+              </p>
+              <p>
+                Appointment Date:
+                {appointment.date}
+              </p>
+              <p>
+                City:
+                {appointment.city}
+              </p>
+              <button
+                type="button"
+                className="submit"
+                onClick={() => deleteUserAppointment(appointment.id)}
+              >
+                Delete
+              </button>
+            </div>
+          ))}
       </div>
     </div>
   );

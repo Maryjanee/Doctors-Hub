@@ -58,18 +58,14 @@ const Doctor = ({ doctors, pending, createAnAppointment }) => {
 
   return (
     <div className="main-content">
-      <NavBar />
-
       <div>
         <div>
           {pending && <img src={loader} className="center" alt="loader" />}
+          {notification && <span className="notification-bar">{notification}</span> }
           {doctor && (
-            <div className="single-doctor-container d-grid">
-              <div className="single-details">
-                {notification && <p className="notification-bar">{notification}</p> }
-                <div className="more-info">
-                  <img src={doctor.photo} alt="doctor" />
-                </div>
+            <div className="single-doctor-container">
+              <div className="doctor-image">
+                <img src={doctor.photo} alt={doctor.name} />
               </div>
               <div className="more-details">
                 <div className="text-right my-1 text-upper">

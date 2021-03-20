@@ -1,5 +1,7 @@
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import NavBar from './Navbar';
+import '../styles/ProtectedRoute.scss';
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -7,8 +9,18 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={props => {
       if (localStorage.getItem('auth-token')) {
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        return <Component {...rest} {...props} />;
+        return (
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          <>
+            <div className="sidebar">
+              <NavBar />
+            </div>
+            <div className="content">
+              {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+              <Component {...rest} {...props} />
+            </div>
+          </>
+        );
       }
       return <Redirect to="/" />;
     }}
