@@ -1,13 +1,13 @@
-# Doctors hub
+# Doctors Hub
 
-## What is this project about? 
  Doctors Hub is an application in which users can book an appointment with a doctor based on their needs and the specialization of the doctors. 
 
 Users can:
 - Sign up, log in and sign out.
-- Check the out all doctors 
-- Book an test appointment with a doctor of their choice
+- Check a list  of all doctors to book appointments with
+- Book an appointment with a doctor of their choice
 - Check all of their appointments.
+- Delete their appointment(s)
 
 
 ## Built with: 
