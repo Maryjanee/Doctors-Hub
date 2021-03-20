@@ -3,11 +3,11 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL || 'https://doctors-hub-api.herokuapp.com/api/v1',
+  baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:3001/api/v1',
 });
 
 export const securedAxios = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL || 'https://doctors-hub-api.herokuapp.com/api/v1',
+  baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:3001/api/v1',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -15,10 +15,17 @@ export const securedAxios = axios.create({
 
 securedAxios.interceptors.request.use(config => {
   const method = config.method.toUpperCase();
+  const token = localStorage.getItem('auth-token');
+
+  if (!token) {
+    window.location.reload();
+    return false;
+  }
+
   if (method !== 'OPTIONS') {
     config.headers = {
       ...config.headers,
-      Authorization: `Bearer ${localStorage.getItem('auth-token')}`,
+      Authorization: `Bearer ${token}`,
     };
   }
   return config;
