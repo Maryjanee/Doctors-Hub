@@ -45,6 +45,7 @@ const Login = () => {
 
   return (
     <div className="main-bg">
+      {loginError && <div className="notification-bar">{loginError}</div>}
       <div className="container">
         <h1 className="logo">Doctors Hub</h1>
         <div className="form-container">
@@ -61,7 +62,6 @@ const Login = () => {
             Not Registered?
             <Link to="/signup" className="create">Create an Account</Link>
           </p>
-          {loginError && <div>{loginError}</div>}
         </div>
       </div>
     </div>

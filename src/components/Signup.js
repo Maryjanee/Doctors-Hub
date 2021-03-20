@@ -42,6 +42,7 @@ const Signup = () => {
 
   return (
     <div className="main-bg">
+      {SignupError && <div className="notification-bar">{SignupError}</div>}
       <div className="container">
         <h1 className="logo">Doctors Hub</h1>
 
@@ -81,7 +82,6 @@ const Signup = () => {
               Log In
             </Link>
           </p>
-          {SignupError && <div>{SignupError}</div>}
         </div>
       </div>
     </div>
