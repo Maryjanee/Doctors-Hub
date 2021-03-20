@@ -1,14 +1,12 @@
-
 .carousel-cont {
-  width: 80vw;
-  margin: .5rem auto;
-  p{
-    margin: .5rem
+  margin: 0.5rem auto;
+  p {
+    margin: 0.5rem;
   }
-  a{
+  a {
     display: block;
-    padding:1rem 1.5rem;
-    margin:.5rem;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem;
   }
 }
 
@@ -20,41 +18,52 @@
   justify-content: center;
   align-items: center;
   margin: 1rem auto;
-  :nth-child(1){
-    background: grey;
-  }
+
   img {
     width: 80%;
   }
 }
 
+.backg-light-green {
+  background-color: #b6c479;
+}
+
+.backg-light-yellow {
+  background-color: #eac464;
+}
+
+.backg-light-grey {
+  background-color: #ada4a4;
+}
+
+.backg-light-red {
+  background-color: #e05050;
+}
+
 .social-links-container {
   width: 100%;
-  
+
   .logo-circle {
     width: 2.4rem;
     height: 2.4rem;
     border-radius: 50%;
     border: 3px solid #ebebeb;
     text-align: center;
-    margin-right:.5rem;
-    
+    margin-right: 0.5rem;
+
     img {
-      width:1.2rem;
-      margin-top:.4rem;
-      
+      width: 1.2rem;
+      margin-top: 0.4rem;
     }
-  
   }
 }
 
 .dotted {
- width: 20%;
- margin: .1rem auto;
- img{
-   width:100%;
- }
- 
+  width: 20%;
+  margin: 0.1rem auto;
+  img {
+    width: 100%;
+  }
 }
 
 .slick-slide {

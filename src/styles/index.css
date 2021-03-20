@@ -3,18 +3,20 @@
   --black: #000;
 }
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik:ital,wght@0,400;1,500&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@400;600&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Mukta', sans-serif;
+  font-family: "Mukta", sans-serif;
 }
 
-body, html{
-  height:100%;
-  overflow:hidden;
-  font-family: 'Mukta', sans-serif;
+body,
+html {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: "Mukta", sans-serif;
 }
 
 li {
@@ -27,8 +29,7 @@ a {
 
 .container {
   width: 100%;
-  margin: 20px auto;
-  padding: 0 20px;
+  /* margin: 20px auto; */
 }
 
 .submit {
@@ -48,12 +49,12 @@ a {
   text-transform: uppercase;
 }
 
-.text-right{
+.text-right {
   text-align: right;
 }
 
-.my-1{
-  margin:1rem 0;
+.my-1 {
+  margin: 1rem 0;
 }
 
 .small {
@@ -76,17 +77,16 @@ a {
   justify-content: center;
 }
 
-.border-test{
-  width:70vw;
-  
+.border-test {
+  width: 70vw;
 }
 
 .notification-bar {
-  width:50%;
+  width: 50%;
   height: auto;
-  color:#fff;
+  color: #fff;
   background: red;
-  padding:1rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 .flex-cl {
@@ -108,11 +108,11 @@ a {
   background: #ffb400;
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  min-height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

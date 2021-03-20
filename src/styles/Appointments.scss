@@ -1,21 +1,51 @@
-.appointment-container{
-  width:100%
-}
-
-.appointment {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
+.appointment-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  padding:1.5rem 2.5rem;
-  margin:1rem 1.5rem;
-  p{
-    margin:.5rem 0;
-    font-size: 1.2rem;
-  }
+  margin-top: 2rem;
+
+  .appointment {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    padding: 1.5rem 2.5rem;
+    max-width: 350px;
+    width: 100%;
   
+    p {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+
+    .appointment {
+      max-width: 700px;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media (min-width: 978px) {
+
+    .appointment {
+      width: 340px;
+    }
+  }
 }
 
 .appointment:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-

@@ -1,6 +1,11 @@
 $white: #fff;
 $black: #000;
 $green: #97bf10;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background: $white;
@@ -11,10 +16,6 @@ li {
   a {
     color: #000;
   }
-}
-
-nav {
-  height: 100vh;
 }
 
 .menubar {
@@ -46,7 +47,7 @@ nav {
 
 .navbar__menu {
   display: none;
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     display: block;
     margin-top: 2rem;
   }
@@ -55,14 +56,15 @@ nav {
 .navbar__menu-mobile {
   li {
     padding: 1rem 1.5rem;
-    a, button {
+    a,
+    button {
       color: green;
       font-weight: 700;
-      border:0;
+      border: 0;
     }
-    button{
+    button {
       background: red;
-     padding: 1rem 1.5rem;
+      padding: 1rem 1.5rem;
     }
   }
 }
@@ -80,30 +82,20 @@ nav {
     padding: 0.8rem;
     height: 100%;
     li {
-      a, button{
+      a,
+      button {
         display: block;
         padding: 1rem 1.5rem;
-        width:100%;
-        border:0;
+        width: 100%;
+        border: 0;
         margin: 1rem 0;
       }
       .active {
         background: $green;
       }
-      button{
+      button {
         background: red;
       }
-    }
-  }
-}
-
-.main-content {
-  @media (min-width: 768px) {
-    display: flex;
-    .main-nav {
-      height: 100%;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      width: 17vw;
     }
   }
 }
