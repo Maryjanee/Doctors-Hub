@@ -3,11 +3,11 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:3001/api/v1',
+  baseURL: process.env.REACT_APP_BASE_URL || 'https://doctors-hub-api.herokuapp.com/api/v1',
 });
 
 export const securedAxios = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:3001/api/v1',
+  baseURL: process.env.REACT_APP_BASE_URL || 'https://doctors-hub-api.herokuapp.com/api/v1',
   headers: {
     'Content-Type': 'application/json',
   },
