@@ -47,7 +47,7 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar__menu-mobile" style={{ display: open ? 'block' : 'none', }}>
+      <div className="navbar__menu-mobile" style={{ display: open ? 'block' : 'none' }}>
         <ul className="d-flex flex-cl">
           <li>
             <NavLink to="/doctors" className="nav-links">
