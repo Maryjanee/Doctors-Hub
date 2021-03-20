@@ -14,6 +14,14 @@ $grey: #cacaca;
   padding: 1.5rem 2rem;
   justify-content: center;
 
+  input {
+    background: #f2f2f2;
+  }
+
+  button[type="submit"] {
+    background: $yellow !important;
+  }
+
   input,
   button[type="submit"] {
     padding: 1rem 1.2rem;
@@ -21,7 +29,6 @@ $grey: #cacaca;
     border: 0;
     width: 100%;
     font-size: 1.15rem;
-    background: #f2f2f2;
     color: black;
 
     :focus {

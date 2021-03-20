@@ -36,8 +36,8 @@ a {
 }
 
 .submit {
-  background: #ffb400;
-  color: #fff;
+  background: #ffb400 !important;
+  color: #fff !important;
   outline: none;
   border: 0;
   padding: 1rem 1.2rem;
