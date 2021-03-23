@@ -18,7 +18,7 @@ Users can:
 
 ## Live demo link
 
-[Doctors Hub]()
+[Doctors Hub](https://doctors-hubb.herokuapp.com/)
 
 ## How to use this app locally?
 
@@ -40,7 +40,7 @@ Users can:
 
 - `npm install`
 
-- `npm start`
+- `npm run dev`
 
 3. To run the tests:
 
