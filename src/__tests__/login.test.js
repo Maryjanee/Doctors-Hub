@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import Login from '../components/Login';
-import { renderComponent } from './helper';
+import { renderComponent } from '../helper';
 
 describe('Login Page', () => {
   it('renders correctly', () => {

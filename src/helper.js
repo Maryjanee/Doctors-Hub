@@ -6,9 +6,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { render } from '@testing-library/react';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import rootReducer from '../reducers';
+import rootReducer from './reducers';
 
-export const renderComponent = (Component, props) => {
+export const renderComponent = (Component, props = {}) => {
   return (
     <BrowserRouter>
       <Component {...props} />

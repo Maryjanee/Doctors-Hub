@@ -13,7 +13,7 @@ import faceBook from '../assets/facebook.svg';
 
 import 'react-multi-carousel/lib/styles.css';
 
-const Doctors = ({
+export const Doctors = ({
   fetchAllDoctors, doctors, pending, error,
 }) => {
   useEffect(() => {

@@ -14,7 +14,7 @@ import '../styles/Doctor.scss';
 
 const minDate = addDays(new Date(), 1).toISOString().slice(0, 10);
 
-const Doctor = ({ doctors, pending, createAnAppointment }) => {
+export const Doctor = ({ doctors, pending, createAnAppointment }) => {
   const allCities = ['Lagos', 'Abuja', 'Delta', 'Rivers'];
   const { doctorId } = useParams();
   const [doctor, setDoctor] = useState();

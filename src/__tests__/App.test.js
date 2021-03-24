@@ -1,9 +1,14 @@
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
 import App from '../components/App';
-import { renderWithRedux } from './helper';
+import store from '../Store';
 
-describe('App Component', () => {
-  it('renders with redux and displays h1 text', () => {
-    const { getByText } = renderWithRedux(<App />);
-    expect(getByText('Doctors Hub')).toBeInTheDocument();
-  });
+it('renders Login page correctly', () => {
+  const tree = renderer.create(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
 });

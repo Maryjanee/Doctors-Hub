@@ -1,11 +1,14 @@
+import React from 'react';
 import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
 import Appointment from '../components/Appointments';
-import { renderComponent } from './helper';
+import store from '../Store';
 
-describe('Appointment Page', () => {
-  it('deep snapshot renders correctly', () => {
-    const component = renderComponent(Appointment);
-    const tree = renderer.create(component).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+it('Appointments', () => {
+  const tree = renderer.create(
+    <Provider store={store}>
+      <Appointment />
+    </Provider>,
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
 });

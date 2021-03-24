@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import Signup from '../components/Signup';
-import { renderComponent } from './helper';
+import { renderComponent } from '../helper';
 
 describe('Login Page', () => {
   it('deep snapshot renders correctly', () => {

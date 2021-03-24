@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login Page renders correctly 1`] = `
+exports[`renders Login page correctly 1`] = `
 <div
   className="main-bg"
 >
