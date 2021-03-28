@@ -1,0 +1,111 @@
+$white: #fff;
+$black: #000;
+$green: #b6c479;
+$red: #e05050;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $white;
+  height: 100%;
+}
+
+li {
+  a {
+    color: $black;
+  }
+}
+
+.menubar {
+  width: 2.5rem;
+  height: 100%;
+}
+
+.logo-menu {
+  background: $green;
+  padding: 0.5rem 1.5rem;
+
+  @media (min-width: 768px) {
+    background: $white;
+  }
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+}
+
+.logo-pr {
+  color: $white;
+
+  @media (min-width: 992px) {
+    color: $black;
+    margin-top: 5rem;
+  }
+}
+
+.navbar__menu {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    margin-top: 2rem;
+  }
+}
+
+.navbar__menu-mobile {
+  li {
+    padding: 1rem 1.5rem;
+
+    a,
+    button {
+      color: $black;
+      font-weight: 700;
+      border: 0;
+    }
+
+    button {
+      background: $red;
+      padding: 1rem 1.5rem;
+    }
+  }
+}
+
+.menubar,
+.navbar__menu-mobile {
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.main-nav {
+  @media (min-width: 768px) {
+    padding: 0.8rem;
+    height: 100%;
+
+    li {
+      a,
+      button {
+        display: block;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        border: 0;
+        margin: 1rem 0;
+      }
+
+      .active {
+        background: $green;
+      }
+
+      button {
+        background: $red;
+      }
+    }
+  }
+}

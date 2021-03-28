@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Appointments 1`] = `
+<div
+  className="appointments"
+>
+  <h2
+    className="text-center"
+  >
+    All Appointments
+  </h2>
+  <h4
+    className="text-center"
+  >
+    Hello
+     
+    You have no appointments
+  </h4>
+  <div
+    className="appointment-container"
+  />
+</div>
+`;

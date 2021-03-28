@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page deep snapshot renders correctly 1`] = `
+<div>
+  <p>
+    Home Page
+  </p>
+  <a
+    href="/login"
+    onClick={[Function]}
+  >
+    Login
+  </a>
+  <br />
+  <a
+    href="/signup"
+    onClick={[Function]}
+  >
+    Sign Up
+  </a>
+</div>
+`;

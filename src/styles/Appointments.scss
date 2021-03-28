@@ -1,0 +1,56 @@
+.appointments {
+  h4 {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.appointment-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem;
+
+  .appointment {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    padding: 1.5rem 2.5rem;
+    max-width: 350px;
+    width: 100%;
+
+    p {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+
+    .appointment {
+      max-width: 700px;
+    }
+  }
+
+  @media (min-width: 978px) {
+    .appointment {
+      width: 340px;
+
+      :hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Page deep snapshot renders correctly 1`] = `
+<div
+  className="main-bg"
+>
+  <div
+    className="container"
+  >
+    <h1
+      className="logo"
+    >
+      Doctors Hub
+    </h1>
+    <div
+      className="form-container"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          id="username"
+          name="username"
+          onChange={[Function]}
+          placeholder="Username"
+          type="text"
+        />
+        <input
+          id="email"
+          name="email"
+          onChange={[Function]}
+          placeholder="Email"
+          type="email"
+        />
+        <input
+          id="password"
+          name="password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+        />
+        <button
+          className="submit"
+          type="submit"
+        >
+          Create an Account
+        </button>
+      </form>
+      <p
+        className="text-center small"
+      >
+        Already a member?
+        <a
+          className="create"
+          href="/"
+          onClick={[Function]}
+        >
+          Log In
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;

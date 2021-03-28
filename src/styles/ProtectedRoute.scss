@@ -1,0 +1,18 @@
+.sidebar {
+  @media (min-width: 768px) {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    overflow: auto;
+    position: fixed;
+    width: 20%;
+    z-index: 1;
+  }
+}
+
+.content {
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    margin-left: 20%;
+  }
+}

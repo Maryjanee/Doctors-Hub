@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Login page correctly 1`] = `
+<div
+  className="main-bg"
+>
+  <div
+    className="container"
+  >
+    <h1
+      className="logo"
+    >
+      Doctors Hub
+    </h1>
+    <div
+      className="form-container"
+    >
+      <form
+        className="d-flex flex-cl"
+        onSubmit={[Function]}
+      >
+        <input
+          id="email"
+          name="email"
+          onChange={[Function]}
+          placeholder="Email"
+          type="email"
+          value=""
+        />
+        <input
+          id="password"
+          name="password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <input
+          className="submit"
+          type="submit"
+          value="Login"
+        />
+      </form>
+      <p
+        className="text-center"
+      >
+        Not Registered?
+        <a
+          className="create"
+          href="/signup"
+          onClick={[Function]}
+        >
+          Create an Account
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
